@@ -1,7 +1,8 @@
 {
   "devDependencies": {
     "@wordpress/env": "^8.8.0",
-    "@wordpress/scripts": "^26.13.0"
+    "@wordpress/scripts": "^26.13.0",
+    "fork-ts-checker-webpack-plugin": "^8.0.0"
   },
   "scripts": {
     "build": "wp-scripts build",
