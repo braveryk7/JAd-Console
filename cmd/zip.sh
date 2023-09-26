@@ -5,7 +5,7 @@
 ########################################################
 
 # ZIP name
-zip_file_name="jad-policy"
+zip_file_name="jad-console"
 
 # Output path
 output_path="./"
