@@ -7,5 +7,5 @@ parameters:
     ignoreErrors:
     level: 0
     paths:
-        - ./jad-policy.php
+        - ./jad-console.php
         - class/
