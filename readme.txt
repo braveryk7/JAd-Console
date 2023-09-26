@@ -1,6 +1,6 @@
 === Plugin Name ===
 Contributors: braveryk7
-Tags: Ad, Japanese, policy
+Tags: Ad, Japanese, Console, policy
 Requires at least: 6.3.1
 Tested up to: 6.3.1
 Requires PHP: 8.2.0
