@@ -17,3 +17,9 @@
  */
 
 declare(strict_types = 1);
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'You do not have access rights.' );
+}
+
+load_plugin_textdomain( 'jad-policy', false, basename( __DIR__ ) . '/languages' );
