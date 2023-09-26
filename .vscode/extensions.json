@@ -1,0 +1,10 @@
+{
+	"recommendations": [
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
+		"stylelint.vscode-stylelint",
+		"tungvn.wordpress-snippet",
+		"valeryanm.vscode-phpsab",
+		"bmewburn.vscode-intelephense-client"
+	]
+}
