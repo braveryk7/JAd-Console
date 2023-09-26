@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== JAd Console ===
 Contributors: braveryk7
 Tags: Ad, Japanese, Console, policy
 Requires at least: 6.3.1
