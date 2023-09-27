@@ -18,5 +18,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * JAd Console base class.
  */
 class Jad_Base {
+	protected const PREFIX      = 'jad';
 	protected const PLUGIN_NAME = 'JAd Console';
 }
