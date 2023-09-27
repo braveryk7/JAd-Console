@@ -22,4 +22,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'You do not have access rights.' );
 }
 
-load_plugin_textdomain( 'jad-policy', false, basename( __DIR__ ) . '/languages' );
+load_plugin_textdomain( 'jad-console', false, basename( __DIR__ ) . '/languages' );
+
+require_once __DIR__ . '/classes/class-jac-phpver-judge.php';
+
+$jad_phpver_judge    = new Jac_Phpver_Judge();
+$require_php_version = '8.2.0';
+
+if ( ! $jad_phpver_judge->judgment( $require_php_version ) ) {
+	$jad_phpver_judge->deactivate(
+		__FILE__,
+		'JAd Console',
+		$require_php_version,
+		is_admin(),
+	);
+}
