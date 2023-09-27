@@ -21,4 +21,6 @@ class Jad_Base {
 	protected const PREFIX      = 'jad';
 	protected const PLUGIN_SLUG = 'jad-console';
 	protected const PLUGIN_NAME = 'JAd Console';
+	protected const PLUGIN_FILE = self::PLUGIN_SLUG . '.php';
+	protected const VERSION     = '0.0.1';
 }
