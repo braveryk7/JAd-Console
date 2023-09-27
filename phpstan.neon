@@ -9,3 +9,4 @@ parameters:
     paths:
         - ./jad-console.php
         - classes/
+    phpVersion: 80200
