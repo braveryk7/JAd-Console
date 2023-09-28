@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * JAd Console settings page.
  */
-class Jad_Admin_Page {
+class Jad_Admin_Page extends Jad_Base {
 	/**
 	 * WordPress hook.
 	 * Add settings page link in admin page.
