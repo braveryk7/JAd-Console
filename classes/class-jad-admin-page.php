@@ -24,4 +24,17 @@ class Jad_Admin_Page extends Jad_Base {
 	 */
 	public function __construct() {
 	}
+
+	/**
+	 * Add Setting menu.
+	 */
+	public function add_menu(): void {
+		add_options_page(
+			__( 'JAd Console', 'jad-console' ),
+			__( 'JAd Console', 'jad-console' ),
+			'manage_options',
+			self::PLUGIN_SLUG,
+			[ $this, 'settings_page' ],
+		);
+	}
 }
