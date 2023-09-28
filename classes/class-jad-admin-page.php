@@ -17,5 +17,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * JAd Console settings page.
  */
-class Jad_Settings {
+class Jad_Admin_Page {
 }
