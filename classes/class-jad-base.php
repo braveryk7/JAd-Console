@@ -23,4 +23,13 @@ class Jad_Base {
 	protected const PLUGIN_NAME = 'JAd Console';
 	protected const PLUGIN_FILE = self::PLUGIN_SLUG . '.php';
 	protected const VERSION     = '0.0.1';
+
+	/**
+	 * Return add prefix.
+	 *
+	 * @param string $value After prefix value.
+	 */
+	public static function add_prefix( string $value ): string {
+		return self::PREFIX . '_' . $value;
+	}
 }
