@@ -32,4 +32,12 @@ class Jad_Base {
 	public static function add_prefix( string $value ): string {
 		return self::PREFIX . '_' . $value;
 	}
+
+	/**
+	 * Return plugin name.
+	 * e.g. JAd Console
+	 */
+	public static function get_plugin_name(): string {
+		return self::PLUGIN_NAME;
+	}
 }
