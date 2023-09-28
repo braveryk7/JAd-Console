@@ -68,4 +68,14 @@ class Jad_Base {
 	protected function get_plugin_path(): string {
 		return $this->get_plugin_dir( self::PLUGIN_SLUG ) . '/' . self::PLUGIN_FILE;
 	}
+
+	/**
+	 * Output browser console.
+	 * WARNING: Use debag only!
+	 *
+	 * @param mixed $value Output data.
+	 */
+	protected function console( mixed $value ): void {
+		echo '<script>console.log(' . wp_json_encode( $value ) . ');</script>';
+	}
 }
