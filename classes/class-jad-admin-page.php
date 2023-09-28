@@ -23,6 +23,7 @@ class Jad_Admin_Page extends Jad_Base {
 	 * Add settings page link in admin page.
 	 */
 	public function __construct() {
+		add_action( 'admin_menu', [ $this, 'add_menu' ] );
 	}
 
 	/**
