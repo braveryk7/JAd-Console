@@ -18,4 +18,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * JAd Console settings page.
  */
 class Jad_Admin_Page {
+	/**
+	 * WordPress hook.
+	 * Add settings page link in admin page.
+	 */
+	public function __construct() {
+	}
 }
