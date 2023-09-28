@@ -40,4 +40,14 @@ class Jad_Base {
 	public static function get_plugin_name(): string {
 		return self::PLUGIN_NAME;
 	}
+
+	/**
+	 * Return plugin url.
+	 * e.g. https://expamle.com/wp-content/plugins/jad-console
+	 *
+	 * @param string $plugin_name Plugin name.
+	 */
+	protected function get_plugin_url( string $plugin_name ): string {
+		return WP_PLUGIN_URL . '/' . $plugin_name;
+	}
 }
