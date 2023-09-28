@@ -36,4 +36,12 @@ if ( ! $jad_phpver_judge->judgment( $require_php_version ) ) {
 		$require_php_version,
 		is_admin(),
 	);
+} else {
+	require_once __DIR__ . '/classes/class-jad-base.php';
+	require_once __DIR__ . '/classes/class-jad-admin-page.php';
+
+	/**
+	 * Admin page.
+	 */
+	new Jad_Admin_Page();
 }
