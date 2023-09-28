@@ -60,4 +60,12 @@ class Jad_Base {
 	protected function get_plugin_dir( string $plugin_name ): string {
 		return WP_PLUGIN_DIR . '/' . $plugin_name;
 	}
+
+	/**
+	 * Return plugin file path.
+	 * e.g. /DocumentRoot/wp-content/plugins/jad-console/jad-console.php
+	 */
+	protected function get_plugin_path(): string {
+		return $this->get_plugin_dir( self::PLUGIN_SLUG ) . '/' . self::PLUGIN_FILE;
+	}
 }
