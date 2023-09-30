@@ -52,6 +52,27 @@ class Jad_Admin_Page extends Jad_Base {
 	}
 
 	/**
+	 * Include JS in Send Chat Tools settings page.
+	 *
+	 * @param string $hook_suffix WordPress hook_suffix.
+	 */
+	public function add_scripts( string $hook_suffix ): void {
+		if ( 'settings_page_' . self::PLUGIN_SLUG !== $hook_suffix ) {
+			return;
+		}
+
+		$assets = require_once $this->get_plugin_dir( 'jad-console' ) . '/build/index.asset.php';
+
+		wp_enqueue_script(
+			$this->add_prefix( 'script' ),
+			$this->get_plugin_url( self::PLUGIN_SLUG ) . '/build/index.js',
+			$assets['dependencies'],
+			$assets['version'],
+			true
+		);
+	}
+
+	/**
 	 * Settings page.
 	 */
 	public function settings_page(): void {
