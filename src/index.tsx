@@ -1,4 +1,4 @@
-import { render } from '@wordpress/element';
+import { createRoot } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
 const AdminPage = () => {
@@ -9,4 +9,5 @@ const AdminPage = () => {
 	);
 };
 
-render( <AdminPage />, document.getElementById( 'jad-console-settings' ) );
+const root = createRoot( document.getElementById( 'jad-console-settings' ) as Element );
+root.render( <AdminPage /> );
