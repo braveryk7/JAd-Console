@@ -50,4 +50,11 @@ class Jad_Admin_Page extends Jad_Base {
 		array_unshift( $links, $add_link );
 		return $links;
 	}
+
+	/**
+	 * Settings page.
+	 */
+	public function settings_page(): void {
+		echo '<div id="' . esc_attr( self::PLUGIN_SLUG . '-settings' ) . '"></div>';
+	}
 }
