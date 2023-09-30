@@ -38,4 +38,15 @@ class Jad_Admin_Page extends Jad_Base {
 			[ $this, 'settings_page' ],
 		);
 	}
+
+	/**
+	 * Add configuration link to plugin page.
+	 *
+	 * @param array|string $links plugin page setting links.
+	 */
+	public function add_settings_links( array $links ): array {
+		$add_link = '<a href="options-general.php?page=' . self::PLUGIN_SLUG . '">' . __( 'Settings' ) . '</a>';
+		array_unshift( $links, $add_link );
+		return $links;
+	}
 }
