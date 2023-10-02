@@ -47,6 +47,10 @@ rules:
       alphabetize:
         order: asc
       newlines-between: always
+  import/no-extraneous-dependencies:
+    - error
+      whitelist:
+        - "react"
 settings: 
   import/resolver: 
     typescript: 
