@@ -74,6 +74,14 @@ class Jad_Admin_Page extends Jad_Base {
 	}
 
 	/**
+	 * Custom endpoint for read.
+	 */
+	public function readable_api(): WP_REST_Response {
+		$options = get_option( $this->add_prefix( 'options' ) );
+		return new WP_REST_Response( $options, 200 );
+	}
+
+	/**
 	 * Settings page.
 	 */
 	public function settings_page(): void {
