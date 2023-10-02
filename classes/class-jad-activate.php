@@ -19,6 +19,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Jad_Activate extends Jad_Base {
 	/**
+	 * WordPress hook.
+	 */
+	public function __construct() {
+		register_activation_hook( $this->get_plugin_path(), [ $this, 'register_options' ] );
+	}
+
+	/**
 	 * Register wp_options column.
 	 */
 	public function register_options(): void {
