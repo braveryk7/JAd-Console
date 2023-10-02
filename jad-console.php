@@ -39,9 +39,15 @@ if ( ! $jad_phpver_judge->judgment( $require_php_version ) ) {
 } else {
 	require_once __DIR__ . '/classes/class-jad-base.php';
 	require_once __DIR__ . '/classes/class-jad-admin-page.php';
+	require_once __DIR__ . '/classes/class-jad-activate.php';
 
 	/**
 	 * Admin page.
 	 */
 	new Jad_Admin_Page();
+
+	/**
+	 * Plugin activate.
+	 */
+	new Jad_Activate();
 }

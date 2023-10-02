@@ -22,6 +22,8 @@ class Jad_Base {
 	protected const PLUGIN_SLUG = 'jad-console';
 	protected const PLUGIN_NAME = 'JAd Console';
 	protected const PLUGIN_FILE = self::PLUGIN_SLUG . '.php';
+	protected const API_NAME    = self::PLUGIN_SLUG;
+	protected const API_VERSION = 'v1';
 	protected const VERSION     = '0.0.1';
 
 	/**
@@ -67,6 +69,17 @@ class Jad_Base {
 	 */
 	protected function get_plugin_path(): string {
 		return $this->get_plugin_dir( self::PLUGIN_SLUG ) . '/' . self::PLUGIN_FILE;
+	}
+
+	/**
+	 * Return WP-API parameter.
+	 * e.g. jad-console/v1
+	 *
+	 * @param string $api_name    Plugin unique name.
+	 * @param string $api_version Plugin API version.
+	 */
+	protected function get_api_namespace( string $api_name = self::API_NAME, string $api_version = self::API_VERSION ): string {
+		return "{$api_name}/{$api_version}";
 	}
 
 	/**
