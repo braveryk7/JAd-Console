@@ -74,6 +74,21 @@ class Jad_Admin_Page extends Jad_Base {
 	}
 
 	/**
+	 * Register custom endpoint.
+	 */
+	public function register_rest_api(): void {
+		register_rest_route(
+			$this->get_api_namespace(),
+			'options',
+			[
+				'methods'             => WP_REST_Server::READABLE,
+				'callback'            => [ $this, 'readable_api' ],
+				'permission_callback' => current_user_can( 'manage_options' ),
+			],
+		);
+	}
+
+	/**
 	 * Custom endpoint for read.
 	 */
 	public function readable_api(): WP_REST_Response {
