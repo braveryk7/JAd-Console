@@ -49,8 +49,9 @@ rules:
       newlines-between: always
   import/no-extraneous-dependencies:
     - error
-      whitelist:
-        - "react"
+    - packageDir:
+        - ./
+        - ./node_modules/@wordpress/scripts/
 settings: 
   import/resolver: 
     typescript: 
