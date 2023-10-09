@@ -5,3 +5,5 @@ export type apiType = {
 	main_message: string;
 	policy_page_url: string;
 }
+
+export type itemKeyType = keyof apiType;
