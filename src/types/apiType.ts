@@ -7,3 +7,7 @@ export type apiType = {
 }
 
 export type itemKeyType = keyof apiType;
+
+export type useSetApiType = {
+	( itemKey: itemKeyType, value: apiType | undefined ): void;
+}
