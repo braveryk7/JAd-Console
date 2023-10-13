@@ -84,7 +84,7 @@ class Jad_Admin_Page extends Jad_Base {
 			[
 				'methods'             => WP_REST_Server::READABLE,
 				'callback'            => [ $this, 'readable_api' ],
-				'permission_callback' => current_user_can( 'manage_options' ),
+				'permission_callback' => fn () => current_user_can( 'manage_options' ),
 			],
 		);
 	}
