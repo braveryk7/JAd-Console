@@ -65,6 +65,13 @@ class Jad_Admin_Page extends Jad_Base {
 
 		$assets = require_once $this->get_plugin_dir( 'jad-console' ) . '/build/index.asset.php';
 
+		wp_enqueue_style(
+			$this->add_prefix( 'style' ),
+			$this->get_plugin_url( self::PLUGIN_SLUG ) . '/build/index.css',
+			[ 'wp-components' ],
+			$assets['version']
+		);
+
 		wp_enqueue_script(
 			$this->add_prefix( 'script' ),
 			$this->get_plugin_url( self::PLUGIN_SLUG ) . '/build/index.js',
