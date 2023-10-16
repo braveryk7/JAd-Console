@@ -98,6 +98,26 @@ class Jad_Admin_Page extends Jad_Base {
 	}
 
 	/**
+	 * Custom endpoint for update.
+	 *
+	 * @param WP_REST_Request $request WP_REST_Request object.
+	 */
+	public function editable_api( WP_REST_Request $request ): WP_REST_Response {
+		$params      = $request->get_json_params();
+		$jad_options = get_option( $this->add_prefix( 'options' ) );
+
+		match ( true ) {
+			array_key_exists( 'plugin_enabled', $params ) => $jad_options['plugin_enabled']       = $params['plugin_enabled'],
+			array_key_exists( 'admin_mode_enable', $params ) => $jad_options['admin_mode_enable'] = $params['admin_mode_enable'],
+			default => new WP_Error( 'invalid_key', __( 'Required key does not exist', 'admin-bar-tools' ), [ 'status' => 404 ] ),
+		};
+
+		update_option( $this->add_prefix( 'options' ), $jad_options );
+
+		return new WP_REST_Response( $params, 200 );
+	}
+
+	/**
 	 * Settings page.
 	 */
 	public function settings_page(): void {
