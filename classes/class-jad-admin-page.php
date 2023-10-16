@@ -87,6 +87,16 @@ class Jad_Admin_Page extends Jad_Base {
 				'permission_callback' => fn () => current_user_can( 'manage_options' ),
 			],
 		);
+
+		register_rest_route(
+			$this->get_api_namespace(),
+			'update',
+			[
+				'methods'             => WP_REST_Server::EDITABLE,
+				'callback'            => [ $this, 'editable_api' ],
+				'permission_callback' => fn () => current_user_can( 'manage_options' ),
+			]
+		);
 	}
 
 	/**
