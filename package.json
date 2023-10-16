@@ -16,5 +16,8 @@
     "wp-env": "wp-env",
     "packages-update": "wp-scripts packages-update",
     "zip": "sh cmd/zip.sh"
+  },
+  "dependencies": {
+    "@wordpress/components": "^25.9.0"
   }
 }
