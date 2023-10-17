@@ -15,8 +15,8 @@ export const TabItems = ( props: TabItemsType ) => {
 				{ name: 'plugin_enabled', label: __( 'Use plugin', 'jad-console' ) },
 				{ name: 'admin_mode_enable', label: __( 'Use admin mode', 'jad-console' ) },
 				{ name: 'design_type', label: __( 'test', 'jad-console' ) },
-				{ name: 'main_message', label: __( 'test', 'jad-console' ) },
-				{ name: 'policy_page_url', label: __( 'test', 'jad-console' ) },
+				{ name: 'main_message', label: __( 'Main message', 'jad-console' ) },
+				{ name: 'policy_page_url', label: __( 'Policy page URL', 'jad-console' ) },
 			];
 
 			return items;
