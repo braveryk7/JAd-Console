@@ -21,11 +21,12 @@ export const useChangeValue = ( itemKey: itemKeyType ) => {
 			typeof value === 'boolean'
 		) {
 			newItem[ itemKey ] = ! newItem[ itemKey ];
-		} else if ( itemKey === 'design_type' && typeof value === 'number' ) {
-			newItem[ itemKey ] = newItem[ itemKey ] = value;
 		} else if (
-			( itemKey === 'main_message' || itemKey === 'policy_page_url' ) &&
-			typeof value === 'string'
+			(
+				itemKey === 'design_type' ||
+				itemKey === 'main_message' ||
+				itemKey === 'policy_page_url'
+			) && typeof value === 'string'
 		) {
 			newItem[ itemKey ] = value;
 		}
