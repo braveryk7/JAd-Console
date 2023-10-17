@@ -9,3 +9,8 @@ export type TogglePropsType = {
 	itemKey: itemKeyType,
 	label: string,
 }
+
+export type TextControlType = {
+	itemKey: Extract< itemKeyType, string >,
+	label: string,
+}
