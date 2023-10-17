@@ -30,7 +30,7 @@ export const TabItems = ( props: TabItemsType ) => {
 	return (
 		<div className="jad-wrapper">
 			<h3>{ title }</h3>
-			{ items && (
+			{ items && id === 'policy' && (
 				<div className="jad-item">
 					{ items.map( ( { name, label }, i ) => {
 						if ( name === 'plugin_enabled' || name === 'admin_mode_enable' ) {
