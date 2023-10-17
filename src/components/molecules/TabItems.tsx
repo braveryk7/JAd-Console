@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
 
-import { TextControl } from 'src/components/atoms/TextControl';
+import { TextControlForm } from 'src/components/atoms/TextControlForm';
 import { Toggle } from 'src/components/atoms/Toggle';
 
 import { TabItemsType } from 'src/types/ComponentsType';
@@ -43,7 +43,7 @@ export const TabItems = ( props: TabItemsType ) => {
 							);
 						} else if ( name === 'main_message' || name === 'policy_page_url' ) {
 							return (
-								<TextControl
+								<TextControlForm
 									key={ i }
 									itemKey={ name }
 									label={ label }
