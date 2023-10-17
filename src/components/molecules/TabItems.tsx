@@ -1,5 +1,6 @@
 import { __ } from '@wordpress/i18n';
 
+import { TextControl } from 'src/components/atoms/TextControl';
 import { Toggle } from 'src/components/atoms/Toggle';
 
 import { TabItemsType } from 'src/types/ComponentsType';
@@ -35,6 +36,14 @@ export const TabItems = ( props: TabItemsType ) => {
 						if ( name === 'plugin_enabled' || name === 'admin_mode_enable' ) {
 							return (
 								<Toggle
+									key={ i }
+									itemKey={ name }
+									label={ label }
+								/>
+							);
+						} else if ( name === 'main_message' || name === 'policy_page_url' ) {
+							return (
+								<TextControl
 									key={ i }
 									itemKey={ name }
 									label={ label }
