@@ -24,7 +24,7 @@ export const useChangeValue = ( itemKey: itemKeyType ) => {
 		} else if ( itemKey === 'design_type' && typeof value === 'number' ) {
 			newItem[ itemKey ] = newItem[ itemKey ] = value;
 		} else if (
-			itemKey === ( 'main_message' || 'policy_page_url' ) &&
+			( itemKey === 'main_message' || itemKey === 'policy_page_url' ) &&
 			typeof value === 'string'
 		) {
 			newItem[ itemKey ] = value;
