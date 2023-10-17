@@ -31,17 +31,18 @@ export const TabItems = ( props: TabItemsType ) => {
 			<h3>{ title }</h3>
 			{ items && (
 				<div className="jad-item">
-					{ items
-						.filter( ( { name } ) => (
-							name === 'plugin_enabled' || name === 'admin_mode_enable'
-						) )
-						.map( ( { name, label }, i ) => (
-							<Toggle
-								key={ i }
-								itemKey={ name }
-								label={ label }
-							/>
-						) ) }
+					{ items.map( ( { name, label }, i ) => {
+						if ( name === 'plugin_enabled' || name === 'admin_mode_enable' ) {
+							return (
+								<Toggle
+									key={ i }
+									itemKey={ name }
+									label={ label }
+								/>
+							);
+						}
+						return null;
+					} ) }
 				</div>
 			) }
 		</div>
