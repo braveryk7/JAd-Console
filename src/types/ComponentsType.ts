@@ -14,3 +14,8 @@ export type TextControlType = {
 	itemKey: Extract< itemKeyType, string >,
 	label: string,
 }
+
+export type SelectControlType = {
+	itemKey: Extract< itemKeyType, 'design_type' >,
+	label: string,
+}
