@@ -140,7 +140,6 @@ class Jad_Admin_Page extends Jad_Base {
 	 * Settings page.
 	 */
 	public function settings_page(): void {
-		$this->console( get_option( 'jad_test' ) );
 		echo '<div id="' . esc_attr( self::PLUGIN_SLUG . '-settings' ) . '"></div>';
 	}
 }
