@@ -7,7 +7,7 @@ import { SaveStatusSnackbarType } from 'src/types/ComponentsType';
 export const SaveStatusSnackbar = ( props: SaveStatusSnackbarType ) => {
 	const { noticeValue, noticeMessage } = props;
 
-	const noticeValueColor = noticeValue && noticeValue === 'jad_success' ? '#00a32a' : '#d63638';
+	const noticeValueColor = noticeValue === 'jad_success' ? '#00a32a' : '#d63638';
 
 	const style = css`
 		background-color: ${ noticeValueColor };
