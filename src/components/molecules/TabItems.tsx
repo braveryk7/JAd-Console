@@ -1,5 +1,6 @@
 import { __ } from '@wordpress/i18n';
 
+import { Select } from 'src/components/atoms/Select';
 import { TextControlForm } from 'src/components/atoms/TextControlForm';
 import { Toggle } from 'src/components/atoms/Toggle';
 
@@ -14,7 +15,7 @@ export const TabItems = ( props: TabItemsType ) => {
 			const items: { name: itemKeyType, label: string }[] = [
 				{ name: 'plugin_enabled', label: __( 'Use plugin', 'jad-console' ) },
 				{ name: 'admin_mode_enable', label: __( 'Use admin mode', 'jad-console' ) },
-				{ name: 'design_type', label: __( 'test', 'jad-console' ) },
+				{ name: 'design_type', label: __( 'Design', 'jad-console' ) },
 				{ name: 'main_message', label: __( 'Main message', 'jad-console' ) },
 				{ name: 'policy_page_url', label: __( 'Policy page URL', 'jad-console' ) },
 			];
@@ -44,6 +45,14 @@ export const TabItems = ( props: TabItemsType ) => {
 						} else if ( name === 'main_message' || name === 'policy_page_url' ) {
 							return (
 								<TextControlForm
+									key={ i }
+									itemKey={ name }
+									label={ label }
+								/>
+							);
+						} else if ( name === 'design_type' ) {
+							return (
+								<Select
 									key={ i }
 									itemKey={ name }
 									label={ label }
