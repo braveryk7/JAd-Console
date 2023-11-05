@@ -1,4 +1,5 @@
 import { itemKeyType } from 'src/types/apiType';
+import { noticeValueType } from 'src/types/contextType';
 
 export type TabItemsType = {
 	id: string,
@@ -18,4 +19,9 @@ export type TextControlType = {
 export type SelectControlType = {
 	itemKey: Extract< itemKeyType, 'design_type' >,
 	label: string,
+}
+
+export type SaveStatusSnackbarType = {
+	noticeValue: noticeValueType | undefined,
+	noticeMessage: string,
 }
