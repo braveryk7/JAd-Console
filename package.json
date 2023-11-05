@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@emotion/css": "^11.11.2",
     "@wordpress/env": "^8.8.0",
     "@wordpress/scripts": "^26.13.0",
     "esbuild-loader": "^4.0.2",
@@ -16,5 +17,8 @@
     "wp-env": "wp-env",
     "packages-update": "wp-scripts packages-update",
     "zip": "sh cmd/zip.sh"
+  },
+  "dependencies": {
+    "@wordpress/components": "^25.9.0"
   }
 }
