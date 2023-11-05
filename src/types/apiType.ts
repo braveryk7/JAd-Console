@@ -1,7 +1,7 @@
 export type apiType = {
 	plugin_enabled: boolean;
 	admin_mode_enable: boolean;
-	design_type: string;
+	design_type: 'default';
 	main_message: string;
 	policy_page_url: string;
 }
