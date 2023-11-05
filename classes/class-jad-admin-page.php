@@ -126,6 +126,7 @@ class Jad_Admin_Page extends Jad_Base {
 		match ( true ) {
 			array_key_exists( 'plugin_enabled', $params ) => $jad_options['plugin_enabled']       = $params['plugin_enabled'],
 			array_key_exists( 'admin_mode_enable', $params ) => $jad_options['admin_mode_enable'] = $params['admin_mode_enable'],
+			array_key_exists( 'design_type', $params ) => $jad_options['design_type']             = $params['design_type'],
 			array_key_exists( 'main_message', $params ) => $jad_options['main_message']           = $params['main_message'],
 			array_key_exists( 'policy_page_url', $params ) => $jad_options['policy_page_url']     = $params['policy_page_url'],
 			default => new WP_Error( 'invalid_key', __( 'Required key does not exist', 'admin-bar-tools' ), [ 'status' => 404 ] ),
