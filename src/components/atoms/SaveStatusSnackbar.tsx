@@ -7,7 +7,6 @@ import { SaveStatusSnackbarType } from 'src/types/ComponentsType';
 export const SaveStatusSnackbar = ( props: SaveStatusSnackbarType ) => {
 	const { noticeValue, noticeMessage } = props;
 
-	// noticeValueがjad-successの場合は緑色、jad-errorの場合は赤色にする
 	const noticeValueColor = noticeValue && noticeValue === 'jad_success' ? '#00a32a' : '#d63638';
 
 	const style = css`
