@@ -1,8 +1,8 @@
 import { apiType } from './types/apiType';
-import { Snackbar } from '@wordpress/components';
 import { createContext, createRoot, useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
+import { SaveStatusSnackbar } from 'src/components/atoms/SaveStatusSnackbar';
 import { Tab } from 'src/components/organisms/Tab';
 import { useGetApi } from 'src/hooks/useGetApi';
 
@@ -33,7 +33,10 @@ const AdminPage = () => {
 		<div>
 			<h1>{ __( 'JAd Console設定', 'jad-console' ) }</h1>
 			{ noticeValue && (
-				<Snackbar className={ noticeValue }>{ noticeMessage }</Snackbar>
+				<SaveStatusSnackbar
+					noticeValue={ noticeValue }
+					noticeMessage={ noticeMessage }
+				/>
 			) }
 			{ apiData && (
 				<apiContext.Provider
