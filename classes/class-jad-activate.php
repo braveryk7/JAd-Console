@@ -32,7 +32,7 @@ class Jad_Activate extends Jad_Base {
 		$options = [
 			'plugin_enabled'    => true,
 			'admin_mode_enable' => true,
-			'design_type'       => 1,
+			'design_type'       => 'default',
 			'main_message'      => '',
 			'policy_page_url'   => '',
 		];
