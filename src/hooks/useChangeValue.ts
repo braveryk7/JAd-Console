@@ -23,12 +23,13 @@ export const useChangeValue = ( itemKey: itemKeyType ) => {
 			newItem[ itemKey ] = ! newItem[ itemKey ];
 		} else if (
 			(
-				itemKey === 'design_type' ||
 				itemKey === 'main_message' ||
 				itemKey === 'policy_page_url'
 			) && typeof value === 'string'
 		) {
 			newItem[ itemKey ] = value;
+		} else if ( itemKey === 'design_type' ) {
+			newItem[ itemKey ] = value as Extract< apiType, 'design_type' >;
 		}
 
 		setApiData( newItem );
