@@ -128,7 +128,7 @@ class Jad_Admin_Page extends Jad_Base {
 		if ( in_array( array_key_first( $params ), $parameters, true ) ) {
 			$jad_options[ array_key_first( $params ) ] = $params[ array_key_first( $params ) ];
 		} else {
-			new WP_Error( 'invalid_key', __( 'Required key does not exist', 'admin-bar-tools' ), [ 'status' => 404 ] );
+			new WP_Error( 'invalid_key', __( 'Required key does not exist', 'jad-console' ), [ 'status' => 404 ] );
 		}
 
 		update_option( $this->add_prefix( 'options' ), $jad_options );
