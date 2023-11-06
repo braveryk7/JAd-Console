@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Judgment PHP Version.
  */
-class Jac_Phpver_Judge {
+class Jad_Phpver_Judge {
 	/**
 	 * Judgment PHP version.
 	 *
