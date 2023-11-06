@@ -24,9 +24,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 load_plugin_textdomain( 'jad-console', false, basename( __DIR__ ) . '/languages' );
 
-require_once __DIR__ . '/classes/class-jac-phpver-judge.php';
+require_once __DIR__ . '/classes/class-jad-phpver-judge.php';
 
-$jad_phpver_judge    = new Jac_Phpver_Judge();
+$jad_phpver_judge    = new Jad_Phpver_Judge();
 $require_php_version = '8.2.0';
 
 if ( ! $jad_phpver_judge->judgment( $require_php_version ) ) {
