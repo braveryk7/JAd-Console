@@ -1,4 +1,4 @@
-import { css, cx } from '@emotion/css';
+import { css } from '@emotion/css';
 
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
@@ -27,7 +27,7 @@ export const Select = ( props: SelectControlType ) => {
 						label={ label }
 						options={ items }
 						onChange={ changeValue }
-						className={ cx( style ) }
+						className={ style }
 					/>
 				</section>
 			}
