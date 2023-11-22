@@ -7,6 +7,7 @@ module.exports = {
 	...defaultConfig,
 	entry: {
 		index: path.resolve( process.cwd(), 'src', 'index.tsx' ),
+		'ad-policy-notify': path.resolve( process.cwd(), 'src/ad-policy-notify', 'index.tsx' ),
 	},
 	resolve: {
 		...defaultConfig.resolve,
