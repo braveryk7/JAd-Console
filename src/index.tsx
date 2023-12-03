@@ -17,7 +17,7 @@ const AdminPage = () => {
 	const [ noticeMessage, setNoticeMessage ] = useState( '' );
 	const [ snackbarTimer, setSnackbarTimer ] = useState( 0 );
 
-	useGetApi( setApiData, setApiError );
+	useGetApi( 'options', setApiData, setApiError );
 
 	useEffect( () => {
 		if ( noticeValue ) {
