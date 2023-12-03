@@ -25,4 +25,20 @@ class Jad_Ad_Policy_Notice extends Jad_Base {
 		add_action( 'wp_enqueue_scripts', [ $this, 'add_scripts' ] );
 		add_action( 'wp_footer', [ $this, 'show_ad_policy' ], 1 );
 	}
+
+	/**
+	 * Include JS in Send Chat Tools settings page.
+	 */
+	public function add_scripts(): void {
+
+		$assets = require_once $this->get_plugin_dir( 'jad-console' ) . '/build/ad-policy-notify.asset.php';
+
+		wp_enqueue_script(
+			$this->add_prefix( 'ad-policy-notify-script' ),
+			$this->get_plugin_url( self::PLUGIN_SLUG ) . '/build/ad-policy-notify.js',
+			$assets['dependencies'],
+			$assets['version'],
+			true
+		);
+	}
 }
