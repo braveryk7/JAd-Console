@@ -64,4 +64,17 @@ class Jad_Ad_Policy_Notice extends Jad_Base {
 			],
 		);
 	}
+
+	/**
+	 * Custom endpoint for read.
+	 */
+	public function readable_api(): WP_REST_Response {
+		$options               = get_option( $this->add_prefix( 'options' ) );
+		$use_front_page_values = [
+			'design_type'     => $options['design_type'],
+			'main_message'    => $options['main_message'],
+			'policy_page_url' => $options['policy_page_url'],
+		];
+		return new WP_REST_Response( $use_front_page_values, 200 );
+	}
 }
