@@ -49,4 +49,19 @@ class Jad_Ad_Policy_Notice extends Jad_Base {
 	public function show_ad_policy() {
 		echo "<div id='jad-console-ad-policy-notify'></div>\n";
 	}
+
+	/**
+	 * Register custom endpoint.
+	 */
+	public function register_rest_api(): void {
+		register_rest_route(
+			$this->get_api_namespace(),
+			'notify',
+			[
+				'methods'             => WP_REST_Server::READABLE,
+				'callback'            => [ $this, 'readable_api' ],
+				'permission_callback' => fn () => true,
+			],
+		);
+	}
 }
