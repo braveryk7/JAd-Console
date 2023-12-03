@@ -24,6 +24,7 @@ class Jad_Ad_Policy_Notice extends Jad_Base {
 	public function __construct() {
 		add_action( 'wp_enqueue_scripts', [ $this, 'add_scripts' ] );
 		add_action( 'wp_footer', [ $this, 'show_ad_policy' ], 1 );
+		add_action( 'rest_api_init', [ $this, 'register_rest_api' ] );
 	}
 
 	/**
