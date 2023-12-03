@@ -41,4 +41,11 @@ class Jad_Ad_Policy_Notice extends Jad_Base {
 			true
 		);
 	}
+
+	/**
+	 * View the ad policy.
+	 */
+	public function show_ad_policy() {
+		echo "<div id='jad-console-ad-policy-notify'></div>\n";
+	}
 }
