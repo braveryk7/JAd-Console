@@ -17,4 +17,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class to output ad policy.
  */
-class Jad_Ad_Policy_Notice {}
+class Jad_Ad_Policy_Notice extends Jad_Base {
+	/**
+	 * WordPress hook.
+	 */
+	public function __construct() {
+		add_action( 'wp_enqueue_scripts', [ $this, 'add_scripts' ] );
+		add_action( 'wp_footer', [ $this, 'show_ad_policy' ], 1 );
+	}
+}
