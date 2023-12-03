@@ -40,6 +40,7 @@ if ( ! $jad_phpver_judge->judgment( $require_php_version ) ) {
 	require_once __DIR__ . '/classes/class-jad-base.php';
 	require_once __DIR__ . '/classes/class-jad-admin-page.php';
 	require_once __DIR__ . '/classes/class-jad-activate.php';
+	require_once __DIR__ . '/classes/class-jad-ad-policy-notice.php';
 
 	/**
 	 * Admin page.
@@ -50,4 +51,9 @@ if ( ! $jad_phpver_judge->judgment( $require_php_version ) ) {
 	 * Plugin activate.
 	 */
 	new Jad_Activate();
+
+	/**
+	 * Ad policy notice.
+	 */
+	new Jad_Ad_Policy_Notice();
 }
