@@ -24,6 +24,7 @@ class Jad_Ad_Policy_Notice extends Jad_Base {
 	public function __construct() {
 		add_action( 'wp_enqueue_scripts', [ $this, 'add_scripts' ] );
 		add_action( 'wp_footer', [ $this, 'show_ad_policy' ], 1 );
+		add_action( 'rest_api_init', [ $this, 'register_rest_api' ] );
 	}
 
 	/**
@@ -47,5 +48,33 @@ class Jad_Ad_Policy_Notice extends Jad_Base {
 	 */
 	public function show_ad_policy() {
 		echo "<div id='jad-console-ad-policy-notify'></div>\n";
+	}
+
+	/**
+	 * Register custom endpoint.
+	 */
+	public function register_rest_api(): void {
+		register_rest_route(
+			$this->get_api_namespace(),
+			'notify',
+			[
+				'methods'             => WP_REST_Server::READABLE,
+				'callback'            => [ $this, 'readable_api' ],
+				'permission_callback' => fn () => true,
+			],
+		);
+	}
+
+	/**
+	 * Custom endpoint for read.
+	 */
+	public function readable_api(): WP_REST_Response {
+		$options               = get_option( $this->add_prefix( 'options' ) );
+		$use_front_page_values = [
+			'design_type'     => $options['design_type'],
+			'main_message'    => $options['main_message'],
+			'policy_page_url' => $options['policy_page_url'],
+		];
+		return new WP_REST_Response( $use_front_page_values, 200 );
 	}
 }
