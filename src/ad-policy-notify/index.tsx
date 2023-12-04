@@ -15,17 +15,19 @@ export const AdPolicyNotify = () => {
 
 	return (
 		<>
-			{ ! apiError && apiData && notifyHidden ? (
+			{ ! apiError && apiData && ( notifyHidden ? (
 				<MinimizerToggle
 					notifyHidden={ notifyHidden }
 					setNotifyHidden={ setNotifyHidden }
+					apiData={ apiData }
 				/>
 			) : (
 				<ShowNotify
 					notifyHidden={ notifyHidden }
 					setNotifyHidden={ setNotifyHidden }
+					apiData={ apiData }
 				/>
-			) }
+			) ) }
 		</>
 	);
 };
