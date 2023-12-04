@@ -3,7 +3,7 @@ import { css } from '@emotion/css';
 import { propsType } from 'src/ad-policy-notify/types/propsType';
 
 export const ShowNotify = ( props: propsType ) => {
-	const { notifyHidden, setNotifyHidden } = props;
+	const { notifyHidden, setNotifyHidden, apiData } = props;
 
 	return (
 		<div className={
@@ -11,7 +11,7 @@ export const ShowNotify = ( props: propsType ) => {
 		}>
 			<div className={ AdPolicyNotifyContentStyle }>
 				<p className={ AdPolicyNotifyMessageStyle }>
-					当サイトでは記事の一部で広告を配信しています。詳しくは広告ポリシーをご覧ください。
+					{ apiData?.main_message }
 				</p>
 				<div className={ AdPolicyNotifyButtonWrapperStyle }>
 					<button
