@@ -49,8 +49,7 @@ const AdPolicyNotifyWrapperStyle = css`
 	bottom: 0;
 	width: 100%;
 	color: #fff;
-	background-color: #1a1a1a;
-	opacity: 0.95;
+	background-color: rgba( 26, 26, 26, 0.95 );
 	z-index: 9999;
 	padding-top: 15px;
 	padding-bottom: 15px;
