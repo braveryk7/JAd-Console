@@ -9,7 +9,7 @@ import { notifyApiType } from 'src/types/apiType';
 export const AdPolicyNotify = () => {
 	const [ apiData, setApiData ] = useState< notifyApiType | undefined >( undefined );
 	const [ apiError, setApiError ] = useState( false );
-	const [ notifyHidden, setNotifyHidden ] = useState( true );
+	const [ notifyHidden, setNotifyHidden ] = useState( false );
 
 	useGetApi( 'notify', setApiData, setApiError );
 
