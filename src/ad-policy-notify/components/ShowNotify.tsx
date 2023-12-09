@@ -5,6 +5,23 @@ import { propsType } from 'src/ad-policy-notify/types/propsType';
 export const ShowNotify = ( props: propsType ) => {
 	const { notifyHidden, setNotifyHidden, apiData } = props;
 
+	const policyPage = () => {
+		if ( apiData?.policy_page_url ) {
+			const anchor =
+				<a href={ apiData.policy_page_url } className={ AdPolicyNotifyPolicyUrlStyle }>
+					広告ポリシー
+				</a>;
+
+			return (
+				<>
+					詳しくは{ anchor }をご覧ください。
+				</>
+			);
+		}
+
+		return null;
+	};
+
 	return (
 		<div className={
 			notifyHidden ? AdPolicyNotifyHiddenStyle : AdPolicyNotifyWrapperStyle
@@ -12,6 +29,7 @@ export const ShowNotify = ( props: propsType ) => {
 			<div className={ AdPolicyNotifyContentStyle }>
 				<p className={ AdPolicyNotifyMessageStyle }>
 					{ apiData?.main_message }
+					{ policyPage() }
 				</p>
 				<div className={ AdPolicyNotifyButtonWrapperStyle }>
 					<button
@@ -56,6 +74,10 @@ const AdPolicyNotifyContentStyle = css`
 const AdPolicyNotifyMessageStyle = css`
 	width: 80%;
 	text-align: center;
+`;
+
+const AdPolicyNotifyPolicyUrlStyle = css`
+	color: #fff;
 `;
 
 const AdPolicyNotifyButtonWrapperStyle = css`
