@@ -39,9 +39,6 @@ export const ShowNotify = ( props: propsType ) => {
 						同意する
 					</button>
 				</div>
-				<p className={ AdPolicyNotifyAnnotationStyle }>
-					※このメッセージは同意して頂いた場合、7日間非表示になります。
-				</p>
 			</div>
 		</div>
 	);
@@ -88,12 +85,6 @@ const AdPolicyNotifyButtonStyle = css`
 	padding: 10px 30px;
 	background-color: #fff;
 	border-radius: 10px;
-`;
-
-const AdPolicyNotifyAnnotationStyle = css`
-	font-size: 0.8rem;
-	flex-grow: 1;
-	text-align: center;
 `;
 
 const AdPolicyNotifyHiddenStyle = css`
