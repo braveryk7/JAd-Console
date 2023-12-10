@@ -22,9 +22,21 @@ class Jad_Ad_Policy_Notice extends Jad_Base {
 	 * WordPress hook.
 	 */
 	public function __construct() {
-		add_action( 'wp_enqueue_scripts', [ $this, 'add_scripts' ] );
-		add_action( 'wp_footer', [ $this, 'show_ad_policy' ], 1 );
-		add_action( 'rest_api_init', [ $this, 'register_rest_api' ] );
+
+		add_action(
+			'init',
+			function () {
+
+				$jad_options = get_option( $this->add_prefix( 'options' ) );
+				if ( ! $jad_options['plugin_enabled'] || ( is_user_logged_in() && $jad_options['admin_mode_enable'] ) ) {
+					return;
+				}
+
+				add_action( 'wp_enqueue_scripts', [ $this, 'add_scripts' ] );
+				add_action( 'wp_footer', [ $this, 'show_ad_policy' ], 1 );
+				add_action( 'rest_api_init', [ $this, 'register_rest_api' ] );
+			}
+		);
 	}
 
 	/**
