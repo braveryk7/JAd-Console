@@ -3,15 +3,15 @@ import { Dispatch, SetStateAction } from 'react';
 import apiFetch from '@wordpress/api-fetch';
 import { useEffect } from '@wordpress/element';
 
-import { apiType, endPointType } from 'src/types/apiType';
+import { endPointType } from 'src/types/apiType';
 
-export const useGetApi = (
+export const useGetApi = < T, >(
 	endPoint: endPointType,
-	stateFunc: Dispatch< SetStateAction< apiType | undefined > >,
+	stateFunc: Dispatch< SetStateAction< T | undefined > >,
 	setApiError: Dispatch< SetStateAction< boolean > >,
 ) => {
 	useEffect( () => {
-		apiFetch< apiType >(
+		apiFetch< T >(
 			{ path: `/jad-console/v1/${ endPoint }` }
 		).then( ( response ) => {
 			setApiError( false );
