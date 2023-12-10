@@ -37,8 +37,9 @@ export const AdPolicyNotifyButtonWrapperStyle = css`
 `;
 
 export const AdPolicyNotifyButtonStyle = css`
-	padding: .7rem 2rem;
+	padding: .7rem 4rem;
 	background-color: rgba( 255, 255, 255, 1 );
+	background-color: rgba( 165, 255, 201, 1 );
 	box-sizing: border-box;
 	border: none;
 	outline: none;
