@@ -8,6 +8,8 @@ export type apiType = {
 	}
 }
 
+export type itemCategoryType = keyof apiType;
+
 export type notifyApiType =
 	Pick<apiType['ad_policy_notify'], 'design_type' | 'main_message' | 'policy_page_url'>;
 
