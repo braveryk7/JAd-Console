@@ -7,7 +7,7 @@ import {
 	AdPolicyNotifyMessageStyle,
 	AdPolicyNotifyPolicyUrlStyle,
 	AdPolicyNotifyWrapperStyle,
-} from 'src/ad-policy-notify/styles/style';
+} from 'src/ad-policy-notify/styles/ShowNotifyStyle';
 import { propsType } from 'src/ad-policy-notify/types/propsType';
 
 export const ShowNotify = ( props: propsType ) => {
