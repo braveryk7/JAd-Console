@@ -5,8 +5,8 @@ import { useChangeValue } from 'src/hooks/useChangeValue';
 import { TogglePropsType } from 'src/types/ComponentsType';
 
 export const Toggle = ( props: TogglePropsType ) => {
-	const { itemKey, label } = props;
-	const { apiData, changeValue } = useChangeValue( itemKey );
+	const { itemCategory, itemKey, label } = props;
+	const { apiData, changeValue } = useChangeValue( itemCategory, itemKey );
 
 	return (
 		<>
@@ -14,7 +14,7 @@ export const Toggle = ( props: TogglePropsType ) => {
 				<section>
 					<ToggleControl
 						label={ label }
-						checked={ apiData[ itemKey ] as boolean }
+						checked={ apiData[ itemCategory ][ itemKey ] as boolean }
 						onChange={ ( value ) => {
 							changeValue( value );
 						} }

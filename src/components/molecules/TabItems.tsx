@@ -11,7 +11,7 @@ export const TabItems = ( props: TabItemsType ) => {
 	const { id, title } = props;
 
 	const getItems = () => {
-		if ( id === 'policy' ) {
+		if ( id === 'ad_policy_notify' ) {
 			const items: { name: itemKeyType, label: string }[] = [
 				{ name: 'plugin_enabled', label: __( 'Use plugin', 'jad-console' ) },
 				{ name: 'admin_mode_enable', label: __( 'Use admin mode', 'jad-console' ) },
@@ -31,13 +31,14 @@ export const TabItems = ( props: TabItemsType ) => {
 	return (
 		<div className="jad-wrapper">
 			<h3>{ title }</h3>
-			{ items && id === 'policy' && (
+			{ items && id === 'ad_policy_notify' && (
 				<div className="jad-item">
 					{ items.map( ( { name, label }, i ) => {
 						if ( name === 'plugin_enabled' || name === 'admin_mode_enable' ) {
 							return (
 								<Toggle
 									key={ i }
+									itemCategory={ id }
 									itemKey={ name }
 									label={ label }
 								/>
@@ -46,6 +47,7 @@ export const TabItems = ( props: TabItemsType ) => {
 							return (
 								<TextControlForm
 									key={ i }
+									itemCategory={ id }
 									itemKey={ name }
 									label={ label }
 								/>
@@ -54,6 +56,7 @@ export const TabItems = ( props: TabItemsType ) => {
 							return (
 								<Select
 									key={ i }
+									itemCategory={ id }
 									itemKey={ name }
 									label={ label }
 								/>

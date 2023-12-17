@@ -30,11 +30,13 @@ class Jad_Activate extends Jad_Base {
 	 */
 	public function register_options(): void {
 		$options = [
-			'plugin_enabled'    => true,
-			'admin_mode_enable' => true,
-			'design_type'       => 'default',
-			'main_message'      => '',
-			'policy_page_url'   => '',
+			'ad_policy_notify' => [
+				'plugin_enabled'    => true,
+				'admin_mode_enable' => true,
+				'design_type'       => 'default',
+				'main_message'      => '',
+				'policy_page_url'   => '',
+			],
 		];
 
 		if ( ! get_option( $this->add_prefix( 'options' ) ) ) {

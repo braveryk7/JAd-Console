@@ -5,7 +5,7 @@ import { TabItems } from 'src/components/molecules/TabItems';
 
 export const Tab = () => {
 	const tabs = [
-		{ name: 'policy', title: __( 'Ad Policy', 'jad-console' ), className: 'tab' },
+		{ name: 'ad_policy_notify', title: __( 'Ad Policy', 'jad-console' ), className: 'tab' },
 	];
 
 	return (
