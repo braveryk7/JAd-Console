@@ -28,7 +28,7 @@ class Jad_Ad_Policy_Notice extends Jad_Base {
 			function () {
 
 				$jad_options = get_option( $this->add_prefix( 'options' ) );
-				if ( ! $jad_options['plugin_enabled'] || ( is_user_logged_in() && $jad_options['admin_mode_enable'] ) ) {
+				if ( ! $jad_options['ad_policy_notify']['plugin_enabled'] || ( is_user_logged_in() && $jad_options['ad_policy_notify']['admin_mode_enable'] ) ) {
 					return;
 				}
 
@@ -83,9 +83,9 @@ class Jad_Ad_Policy_Notice extends Jad_Base {
 	public function readable_api(): WP_REST_Response {
 		$options               = get_option( $this->add_prefix( 'options' ) );
 		$use_front_page_values = [
-			'design_type'     => $options['design_type'],
-			'main_message'    => $options['main_message'],
-			'policy_page_url' => $options['policy_page_url'],
+			'design_type'     => $options['ad_policy_notify']['design_type'],
+			'main_message'    => $options['ad_policy_notify']['main_message'],
+			'policy_page_url' => $options['ad_policy_notify']['policy_page_url'],
 		];
 		return new WP_REST_Response( $use_front_page_values, 200 );
 	}
