@@ -37,7 +37,7 @@ export const useChangeValue = ( itemCategory: itemCategoryType, itemKey: itemKey
 		setApiData( newItem );
 	};
 
-	useSetApi( itemKey, apiData );
+	useSetApi( itemCategory, itemKey, apiData );
 
 	return { apiData, changeValue };
 };
