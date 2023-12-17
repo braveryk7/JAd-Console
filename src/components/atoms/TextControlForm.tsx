@@ -11,8 +11,8 @@ const style = css`
 `;
 
 export const TextControlForm = ( props: TextControlType ) => {
-	const { itemKey, label } = props;
-	const { apiData, changeValue } = useChangeValue( itemKey );
+	const { itemCategory, itemKey, label } = props;
+	const { apiData, changeValue } = useChangeValue( itemCategory, itemKey );
 
 	return (
 		<>
@@ -21,7 +21,7 @@ export const TextControlForm = ( props: TextControlType ) => {
 					<TextControl
 						className={ style }
 						label={ label }
-						value={ apiData[ itemKey ] as string }
+						value={ apiData[ itemCategory ][ itemKey ] as string }
 						onChange={ ( value ) => {
 							changeValue( value );
 						} }

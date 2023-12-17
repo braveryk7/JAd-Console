@@ -12,8 +12,8 @@ const style = css`
 `;
 
 export const Select = ( props: SelectControlType ) => {
-	const { itemKey, label } = props;
-	const { apiData, changeValue } = useChangeValue( itemKey );
+	const { itemCategory, itemKey, label } = props;
+	const { apiData, changeValue } = useChangeValue( itemCategory, itemKey );
 
 	const items = [
 		{ label: __( 'Default', 'jad-console' ), value: 'default' },
@@ -24,6 +24,7 @@ export const Select = ( props: SelectControlType ) => {
 			{ apiData &&
 				<section>
 					<SelectControl
+						value={ apiData[ itemCategory ][ itemKey ] }
 						label={ label }
 						options={ items }
 						onChange={ changeValue }
