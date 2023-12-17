@@ -7,7 +7,7 @@ import {
 	AdPolicyNotifyMessageStyle,
 	AdPolicyNotifyPolicyUrlStyle,
 	AdPolicyNotifyWrapperStyle,
-} from 'src/ad-policy-notify/styles/style';
+} from 'src/ad-policy-notify/styles/ShowNotifyStyle';
 import { propsType } from 'src/ad-policy-notify/types/propsType';
 
 export const ShowNotify = ( props: propsType ) => {
@@ -16,7 +16,7 @@ export const ShowNotify = ( props: propsType ) => {
 	const policyPage = () => {
 		if ( apiData?.policy_page_url ) {
 			const anchor =
-				<a href={ apiData.policy_page_url } className={ AdPolicyNotifyPolicyUrlStyle }>
+				<a href={ apiData.policy_page_url } className={ AdPolicyNotifyPolicyUrlStyle() }>
 					広告ポリシー
 				</a>;
 
@@ -32,16 +32,16 @@ export const ShowNotify = ( props: propsType ) => {
 
 	return (
 		<div className={
-			notifyHidden ? AdPolicyNotifyHiddenStyle : AdPolicyNotifyWrapperStyle
+			notifyHidden ? AdPolicyNotifyHiddenStyle() : AdPolicyNotifyWrapperStyle()
 		}>
-			<div className={ AdPolicyNotifyContentStyle }>
-				<p className={ AdPolicyNotifyMessageStyle }>
+			<div className={ AdPolicyNotifyContentStyle() }>
+				<p className={ AdPolicyNotifyMessageStyle() }>
 					{ apiData?.main_message }
 					{ policyPage() }
 				</p>
-				<div className={ AdPolicyNotifyButtonWrapperStyle }>
+				<div className={ AdPolicyNotifyButtonWrapperStyle() }>
 					<button
-						className={ AdPolicyNotifyButtonStyle }
+						className={ AdPolicyNotifyButtonStyle() }
 						onClick={ () => setNotifyHidden( ! notifyHidden ) }
 					>
 						同意する
