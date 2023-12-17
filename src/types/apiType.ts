@@ -16,7 +16,7 @@ export type notifyApiType =
 export type itemKeyType = keyof apiType['ad_policy_notify'];
 
 export type useSetApiType = {
-	( itemKey: itemKeyType, value: apiType | undefined ): void;
+	( itemCategory: itemCategoryType, itemKey: itemKeyType, value: apiType | undefined ): void;
 }
 
 export type endPointType = 'options' | 'notify'
