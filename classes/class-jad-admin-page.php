@@ -125,8 +125,8 @@ class Jad_Admin_Page extends Jad_Base {
 
 		$parameters = [ 'plugin_enabled', 'admin_mode_enable', 'design_type', 'main_message', 'policy_page_url' ];
 
-		if ( in_array( array_key_first( $params ), $parameters, true ) ) {
-			$jad_options[ array_key_first( $params ) ] = $params[ array_key_first( $params ) ];
+		if ( 'ad_policy_notify' === $params['itemCategory'] && in_array( $params['itemKey'], $parameters, true ) ) {
+			$jad_options['ad_policy_notify'][ $params['itemKey'] ] = $params['value'];
 		} else {
 			return new WP_Error( 'invalid_key', __( 'Required key does not exist', 'jad-console' ), [ 'status' => 404 ] );
 		}
