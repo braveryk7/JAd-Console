@@ -81,11 +81,12 @@ class Jad_Ad_Policy_Notice extends Jad_Base {
 	 * Custom endpoint for read.
 	 */
 	public function readable_api(): WP_REST_Response {
-		$options               = get_option( $this->add_prefix( 'options' ) );
+		$jad_options           = get_option( $this->add_prefix( 'options' ) );
+		$ad_policy_notify      = $jad_options['ad_policy_notify'];
 		$use_front_page_values = [
-			'design_type'     => $options['ad_policy_notify']['design_type'],
-			'main_message'    => $options['ad_policy_notify']['main_message'],
-			'policy_page_url' => $options['ad_policy_notify']['policy_page_url'],
+			'design_type'     => $ad_policy_notify['design_type'],
+			'main_message'    => $ad_policy_notify['main_message'],
+			'policy_page_url' => $ad_policy_notify['policy_page_url'],
 		];
 		return new WP_REST_Response( $use_front_page_values, 200 );
 	}
