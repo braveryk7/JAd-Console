@@ -1,5 +1,7 @@
 import { css } from '@emotion/css';
 
+import { breakPoint } from 'src/styles/common/commonStyles';
+
 export const AdPolicyNotifyWrapperStyle = () => {
 	return css`
 		position: fixed;
@@ -8,8 +10,11 @@ export const AdPolicyNotifyWrapperStyle = () => {
 		color: #fff;
 		background-color: rgba( 26, 26, 26, 0.95 );
 		z-index: 9999;
-		padding-top: 15px;
 		padding-bottom: 15px;
+
+		@media screen and ( min-width: ${ breakPoint( 'pc' ) } ) {
+			padding-top: 15px;
+		}
 	`;
 };
 
@@ -19,18 +24,24 @@ export const AdPolicyNotifyContentStyle = () => {
 		justify-content: center;
 		align-items: center;
 		flex-wrap: wrap;
-		margin: 0 150px;
 
-		@media screen and ( max-width: 768px ) {
-			margin: 0px;
+		@media screen and ( min-width: ${ breakPoint( 'pc' ) } ) {
+			margin: 0 150px;
 		}
 	`;
 };
 
 export const AdPolicyNotifyMessageStyle = () => {
 	return css`
-		width: 80%;
 		text-align: center;
+
+		@media screen and ( min-width: ${ breakPoint( 'pc' ) } ) {
+			width: 80%;
+		}
+
+		@media screen and ( max-width: ${ breakPoint( 'sp' ) } ) {
+			width: 90%;
+		}
 	`;
 };
 
@@ -42,7 +53,9 @@ export const AdPolicyNotifyPolicyUrlStyle = () => {
 
 export const AdPolicyNotifyButtonWrapperStyle = () => {
 	return css`
-		width: 20%;
+		@media screen and ( min-width: ${ breakPoint( 'pc' ) } ) {
+			width: 20%;
+		}
 	`;
 };
 
